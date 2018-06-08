@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>Albato page</title>
     <link href="static/css/index.css" rel="stylesheet">
     <link rel="icon" href="static/favicon.ico">
   </head>
@@ -228,73 +228,144 @@
       </div>
     </header>
     <!-- Main content-->
-    <main class="content" data-page="home">
-      <div class="popup">
+    <main class="content" data-page="albato">
+      <section class="albato">
         <div class="container">
-          <div class="popup__content">
-            <div class="popup__content__close">Закрыть</div>
-            <div class="popup__content__send">
-              <div class="popup__content__send__img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="59" viewbox="0 0 64 59">
-                  <g fill="none" fill-rule="nonzero"></g>
-                  <path fill="#746A5C" d="M64 .714s0-.214 0 0c0-.214 0-.214 0 0V.286h-.213-.214-.213-.213-.214-.213-.213-.214l-51.2 30c-.213-.215-.426 0-.426.428 0 .429.426.857.64.857l15.573 5.143L32 52.357c0 .214.213.429.213.429.214.214.427.214.64.214h.427c.213 0 .213-.214.213-.214l8.534-10.715 11.733 4.5h.427c.213 0 .426 0 .426-.214.214-.214.427-.428.427-.643l8.533-45C64 .93 64 .93 64 .714zM53.333 11.857L34.347 37.571c0 .215-.214.215-.214.429l-1.493 9.643L29.013 36.5l24.32-24.643zm-18.56 36.429l1.28-8.572 4.267 1.715-5.547 6.857z"></path>
-                  <path fill="#1F282C" d="M1.92 45.929a1.028 1.028 0 0 0-1.493 0 1.039 1.039 0 0 0 0 1.5l1.92 1.928c.213.214.426.214.64.214.213 0 .64-.214.853-.428a1.039 1.039 0 0 0 0-1.5 5.044 5.044 0 0 1-1.92-1.714zM11.307 53.643a19.461 19.461 0 0 1-2.774-1.714c-.426-.429-1.066-.215-1.493.214-.427.428-.213 1.071.213 1.5 1.067.643 1.92 1.286 2.987 1.928.213 0 .427.215.427.215.426 0 .64-.215.853-.643.64-.643.427-1.286-.213-1.5zM24.747 56c-.427 0-.64.214-1.067.214-.64 0-1.067.643-.853 1.286 0 .429.64.857 1.066.857h.214c.426 0 .64-.214 1.066-.214.64-.214.854-.643.854-1.286-.214-.643-.64-1.071-1.28-.857zM18.987 56.214l-3.2-.643c-.64-.214-1.067.215-1.28.643-.214.643.213 1.072.64 1.286 1.066.429 2.346.643 3.413.857h.213c.427 0 1.067-.428 1.067-.857.213-.643-.213-1.286-.853-1.286zM29.867 53.857c-.64.429-1.494.857-2.347 1.072-.64.214-.853.857-.64 1.5.213.428.64.642 1.067.642h.426l2.56-1.285c.427-.215.64-.857.427-1.5-.427-.429-1.067-.643-1.493-.429z"></path>
-                </svg>
-              </div>
-              <div class="popup__content__send__info">
-                <h3>Ваши данные отправлены.</h3>
-                <p>Мы свяжемся с вами в ближайшее время. </p>
-              </div>
+          <div class="albato__title">Интеграция Calltouch и +50 сервисов через Albato</div>
+          <img class="albato__logo" src="./static/img/albato-logo.svg" alt="albato-logo">
+          <div class="albato__subtitle">— один сервис для всех интеграций.</div>
+          <div class="albato__items">
+            <div class="albato__item">
+              <img class="albato__item__img" src="./static/img/al-globe.svg" alt="albato-logo">
+              <div class="albato__item__text">Интегрируйте более
+                <br> 50 сервисов с вашим
+                <br>кабинетом Calltouch</div>
             </div>
-            <div class="popup__main">
-              <div class="popup__content__title">
-                <h3>Готовы применить систему
-                  <div class="active">Calltouch</div>
-                  <br/>для роста эффективности вашего бизнеса? </h3>
-              </div>
-              <form class="popup__content__form">
-                <div class="form-group">
-                  <label class="popup__content__form__label">
-                    <span>Имя</span>
-                    <input class="inputsValidate" id="name-f" type="text" />
-                  </label>
-                  <label class="popup__content__form__label error">
-                    <span>Контактный телефон</span>
-                    <input class="inputsValidate" id="phone-f" type="tel" />
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label class="popup__content__form__label">
-                    <span>Электронная почта</span>
-                    <input class="inputsValidate" id="mail-f" type="email" />
-                  </label>
-                  <div class="popup__content__form__label">
-                    <span>Сайт</span>
-                    <input class="inputsValidate" id="site-f" type="text" />
-                  </div>
-                  <p class="iferror">Проверьте номер телефона, похоже, что по нему мы не сможем вам позвонить.</p>
-                </div>
-                <button class="popup__content__form__button">Отправить</button>
-              </form>
-              <div class="popup__content__personaldata">
-                <p>Нажимая на кнопку "Отправить", вы даёте своё согласие
-                  <a href="#">на обработку персональных данных</a>
-                </p>
-              </div>
-              <div class="popup__content__contacts call_phone_1_2">
-                <h3>Есть вопросы? Звоните</h3>
-                <a href="tel:+7 495 308-01-00">+7 495 308-01-00</a>
-                <a href="tel:8 800 222-13-81">8 800 222-13-81</a>
-              </div>
+            <div class="albato__item">
+              <img class="albato__item__img" src="./static/img/al-diagram.svg" alt="albato-logo">
+              <div class="albato__item__text">Отправляйте
+                <br> информацию о звонках
+                <br>в другие сервисы</div>
+            </div>
+            <div class="albato__item">
+              <img class="albato__item__img chart" src="./static/img/al-chart.svg" alt="albato-logo">
+              <div class="albato__item__text">Передавайте
+                <br> дополнительные данные
+                <br> в кабинет Calltouch</div>
             </div>
           </div>
+          <div class="albato__wrapper">
+            <a class="albato__link" href="#">
+              <span>Бесплатно для клиентов Calltouch</span>
+            </a>
+            <ul class="albato__reasons">
+              <li>Настройка интеграции за 5 минут</li>
+              <li>Не нужно прибегать к помощи программистов</li>
+              <li>Выбирайте только нужные данные для передачи</li>
+              <li>Уже более 50 сервисов и их число постоянно растет</li>
+            </ul>
+          </div>
+          <div class="albato__settings__title">Настройте нужные интеграции всего в несколько кликов</div>
+          <div class="albato__settings__items">
+            <div class="albato__settings__wrapper">
+              <div class="albato__settings__item onec"></div>
+              <div class="albato__settings__item amocrm"></div>
+              <div class="albato__settings__item bpmonline"></div>
+              <div class="albato__settings__item facebook"></div>
+              <div class="albato__settings__item google"></div>
+            </div>
+            <div class="albato__settings__wrapper">
+              <div class="albato__settings__item jivosite"></div>
+              <div class="albato__settings__item kissmetrics"></div>
+              <div class="albato__settings__item retailcrm"></div>
+              <div class="albato__settings__item slack"></div>
+              <div class="albato__settings__item smsru"></div>
+            </div>
+            <div class="albato__settings__wrapper show">
+              <div class="albato__settings__item telegram"></div>
+              <div class="albato__settings__item wirecrm"></div>
+              <div class="albato__settings__item yolla"></div>
+              <div class="albato__settings__item bitrix"></div>
+              <div class="albato__settings__item megaplan"></div>
+            </div>
+            <div class="albato__settings__wrapper show">
+              <div class="albato__settings__item moisklad"></div>
+              <div class="albato__settings__item yandex"></div>
+              <div class="albato__settings__item vk"></div>
+              <div class="albato__settings__item mailchimp"></div>
+              <div class="albato__settings__item tilda"></div>
+            </div>
+          </div>
+          <div class="albato__more">и другие.</div>
+          <a class="albato__details" href="#">Подробнее о сервисе</a>
         </div>
-      </div>
-      <div class="allcontent">
+      </section>
+      <section class="calltracking__ecosystem">
         <div class="container">
-          <button class="popup__trigger popup__btn">Поп ап</button>
+          <div class="calltracking__ecosystem__title">Экосистема
+            <br>маркетинговых инструментов</div>
+          <div class="calltracking__ecosystem__items">
+            <ul>
+              <li>
+                <a class="calltracking__ecosystem__item" href="#">
+                  <img class="calltracking__ecosystem__item_img" src="./static/img/ct-platform.svg" alt="platform">
+                  <div class="calltracking__ecosystem__item__wrapper">
+                    <div class="calltracking__ecosystem__item__title">Платформа</div>
+                    <div class="calltracking__ecosystem__item__subtitle">Все данные в одном интерфейсе</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="calltracking__ecosystem__item" href="#">
+                  <img class="calltracking__ecosystem__item_img" src="./static/img/ct-calltracking.svg" alt="calltracking">
+                  <div class="calltracking__ecosystem__item__wrapper">
+                    <div class="calltracking__ecosystem__item__title">Коллтрекинг</div>
+                    <div class="calltracking__ecosystem__item__subtitle">Определение источника звонков</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="calltracking__ecosystem__item" href="#">
+                  <img class="calltracking__ecosystem__item_img" src="./static/img/ct-optimizer.svg" alt="optimizer">
+                  <div class="calltracking__ecosystem__item__wrapper optimizer">
+                    <div class="calltracking__ecosystem__item__title">Оптимизатор</div>
+                    <div class="calltracking__ecosystem__item__subtitle">AI управление рекламой</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <a class="calltracking__ecosystem__item" href="#">
+                  <img class="calltracking__ecosystem__item_img" src="./static/img/ct-predict.svg" alt="predict">
+                  <div class="calltracking__ecosystem__item__wrapper">
+                    <div class="calltracking__ecosystem__item__title">Предикт</div>
+                    <div class="calltracking__ecosystem__item__subtitle">Анализ качества звонков</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="calltracking__ecosystem__item" href="#">
+                  <img class="calltracking__ecosystem__item_img" src="./static/img/ct-antifraud.svg" alt="antifraud">
+                  <div class="calltracking__ecosystem__item__wrapper">
+                    <div class="calltracking__ecosystem__item__title">Антифрод</div>
+                    <div class="calltracking__ecosystem__item__subtitle">Защита от накрутки звонков</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="calltracking__ecosystem__item" href="#">
+                  <img class="calltracking__ecosystem__item_img" src="./static/img/ct-callback.svg" alt="callback">
+                  <div class="calltracking__ecosystem__item__wrapper">
+                    <div class="calltracking__ecosystem__item__title">Обратный звонок</div>
+                    <div class="calltracking__ecosystem__item__subtitle">Виджет звонка с сайта</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
     <!-- Footer-->
     <footer class="footer">
