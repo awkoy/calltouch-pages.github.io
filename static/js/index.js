@@ -18690,15 +18690,54 @@ var Common = exports.Common = function () {
   }, {
     key: 'sliderReports',
     value: function sliderReports() {
-      var swiperSlider = new _swiper2.default('.swiper-container', {
-        effect: "slide",
-        loop: true,
+      var swiperSlider = new _swiper2.default('#calltracking__reports__slider', {
+        effect: "fade",
         slidesPerView: 1,
-        autoplay: true,
         // Navigation arrows
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
+        }
+      });
+      var swiperQuote = new _swiper2.default('#calltracking__reports__quote', {
+        effect: "slide",
+        slidesPerView: 1
+        // Navigation arrows
+      });
+      swiperSlider.controller.control = swiperQuote;
+      swiperQuote.controller.control = swiperSlider;
+    }
+  }, {
+    key: 'sliderCases',
+    value: function sliderCases() {
+      var swiperCase = new _swiper2.default('#calltracking__cases__slider', {
+        effect: "slide",
+        slidesPerView: 3,
+        spaceBetween: 16,
+        allowSlideNext: false,
+        allowSlidePrev: false,
+        breakpoints: {
+          // when window width is <= 960px
+          960: {
+            direction: 'vertical',
+            spaceBetween: 24
+          },
+          768: {
+            direction: 'horizontal',
+            slidesPerView: 1,
+            spaceBetween: 16,
+            allowSlideNext: true,
+            allowSlidePrev: true
+          }
+        },
+        on: {
+          init: function init() {
+            (0, _jquery2.default)('#brands__index').text(this.activeIndex + 1);
+            (0, _jquery2.default)('#brands__count').text(this.slides.length);
+          },
+          slideChange: function slideChange() {
+            (0, _jquery2.default)('#brands__index').text(this.activeIndex + 1);
+          }
         }
       });
     }
@@ -18721,6 +18760,7 @@ var Common = exports.Common = function () {
       this.sliderReports();
       this.showMore();
       this.popUpActions();
+      this.sliderCases();
       if (!_helpers.Resp.isMobile) {
         (0, _jquery2.default)(document).scroll(this.throttle(this.headerActivate, 100));
       }
