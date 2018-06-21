@@ -18690,22 +18690,32 @@ var Common = exports.Common = function () {
   }, {
     key: 'sliderReports',
     value: function sliderReports() {
-      var swiperSlider = new _swiper2.default('#calltracking__reports__slider', {
-        effect: "fade",
-        slidesPerView: 1,
-        // Navigation arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
-      });
-      var swiperQuote = new _swiper2.default('#calltracking__reports__quote', {
-        effect: "slide",
-        slidesPerView: 1
-        // Navigation arrows
-      });
-      swiperSlider.controller.control = swiperQuote;
-      swiperQuote.controller.control = swiperSlider;
+      var sliderSlide = (0, _jquery2.default)('#calltracking__reports__slider');
+      var sliderText = (0, _jquery2.default)('#calltracking__reports__quote');
+      if (sliderText.length && sliderSlide.length) {
+        var swiperSlider = new _swiper2.default(sliderSlide, {
+          effect: "slide",
+          slidesPerView: 1,
+          loop: true,
+          // Navigation arrows
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets'
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        });
+        var swiperQuote = new _swiper2.default(sliderText, {
+          effect: "slide",
+          slidesPerView: 1,
+          loop: true
+          // Navigation arrows
+        });
+        swiperSlider.controller.control = swiperQuote;
+        swiperQuote.controller.control = swiperSlider;
+      }
     }
   }, {
     key: 'sliderCases',
