@@ -18688,6 +18688,17 @@ var Common = exports.Common = function () {
       });
     }
   }, {
+    key: 'homeTabs',
+    value: function homeTabs() {
+      (0, _jquery2.default)('ul.tabs li').click(function () {
+        var tab_id = (0, _jquery2.default)(this).attr('data-tab');
+        (0, _jquery2.default)('ul.tabs li').removeClass('current');
+        (0, _jquery2.default)('.tab-content').removeClass('current');
+        (0, _jquery2.default)(this).addClass('current');
+        (0, _jquery2.default)("#" + tab_id).addClass('current');
+      });
+    }
+  }, {
     key: 'sliderReports',
     value: function sliderReports() {
       var sliderSlide = (0, _jquery2.default)('#calltracking__reports__slider');
@@ -18752,6 +18763,42 @@ var Common = exports.Common = function () {
       });
     }
   }, {
+    key: 'sliderAwards',
+    value: function sliderAwards() {
+      var swiperAwards = new _swiper2.default('#home-awards__slider', {
+        effect: "slide",
+        slidesPerView: 5,
+        allowSlideNext: false,
+        allowSlidePrev: false,
+        breakpoints: {
+          1200: {
+            spaceBetween: 24
+          },
+          960: {
+            spaceBetween: 16
+          },
+          // when window width is <= 960px
+          768: {
+            direction: 'horizontal',
+            slidesPerView: 1,
+            allowSlideNext: true,
+            allowSlidePrev: true
+          }
+        }
+      });
+    }
+  }, {
+    key: 'playVideo',
+    value: function playVideo() {
+      var showMovie = function showMovie() {
+        (0, _jquery2.default)("#home-show__movie").css("display", "block");
+        (0, _jquery2.default)("#home-show__movie")[0].src += "&autoplay=1";
+      };
+      (0, _jquery2.default)('#home-show__play').on('click', function () {
+        return (0, _jquery2.default)("#home-show__container").fadeOut(1000, showMovie);
+      });
+    }
+  }, {
     key: 'showMore',
     value: function showMore() {
       var moreButton = (0, _jquery2.default)(".albato__more");
@@ -18769,8 +18816,11 @@ var Common = exports.Common = function () {
     value: function init() {
       this.sliderReports();
       this.showMore();
+      this.homeTabs();
       this.popUpActions();
       this.sliderCases();
+      this.sliderAwards();
+      this.playVideo();
       if (!_helpers.Resp.isMobile) {
         (0, _jquery2.default)(document).scroll(this.throttle(this.headerActivate, 100));
       }
