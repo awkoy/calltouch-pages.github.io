@@ -18494,6 +18494,7 @@ var Common = exports.Common = function () {
       popUpTrigger.click(function () {
         _this2.popUpAnimate.play();
         (0, _jquery2.default)("body").addClass("hide");
+        (0, _jquery2.default)("header").addClass("popup-on");
         (0, _jquery2.default)("html").addClass("hide");
       });
       popUpClose.click(function () {
@@ -18565,6 +18566,7 @@ var Common = exports.Common = function () {
       autoAlpha: 1,
       onReverseComplete: function onReverseComplete() {
         (0, _jquery2.default)("body").removeClass("hide");
+        (0, _jquery2.default)("header").removeClass("popup-on");
         (0, _jquery2.default)("html").removeClass("hide");
       }
     });
@@ -18704,6 +18706,24 @@ var Common = exports.Common = function () {
       });
     }
   }, {
+    key: 'tabSwitcher',
+    value: function tabSwitcher() {
+      var tabName = (0, _jquery2.default)('.tab-link');
+      var tabContainer = (0, _jquery2.default)('#tabs');
+
+      tabName.click(function () {
+        var containerWidth = tabContainer.width();
+        var containerScrollPosition = tabContainer[0].scrollLeft;
+        var tabOffsetLeft = (0, _jquery2.default)(this)[0].offsetLeft;
+        var tabWidth = (0, _jquery2.default)(this).width();
+
+        var center = containerScrollPosition + containerWidth / 2;
+        setTimeout(function () {
+          tabContainer[0].scrollLeft = tabOffsetLeft - containerWidth / 2 + tabWidth / 2;
+        }, 100);
+      });
+    }
+  }, {
     key: 'sliderReports',
     value: function sliderReports() {
       var sliderSlide = (0, _jquery2.default)('#calltracking__reports__slider');
@@ -18785,7 +18805,7 @@ var Common = exports.Common = function () {
           // when window width is <= 960px
           768: {
             direction: 'horizontal',
-            slidesPerView: 1,
+            slidesPerView: 'auto',
             allowSlideNext: true,
             allowSlidePrev: true
           }
@@ -18822,6 +18842,7 @@ var Common = exports.Common = function () {
       this.sliderReports();
       this.showMore();
       this.homeTabs();
+      this.tabSwitcher();
       this.popUpActions();
       this.sliderCases();
       this.sliderAwards();
