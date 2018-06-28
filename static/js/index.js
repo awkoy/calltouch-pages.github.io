@@ -18499,8 +18499,6 @@ var Common = exports.Common = function () {
       popUpClose.click(function () {
         _this2.popUpAnimate.reverse();
         _this2.popUpSucces.reverse();
-        (0, _jquery2.default)("body").removeClass("hide");
-        (0, _jquery2.default)("html").removeClass("hide");
       });
 
       popUpSubmit.click(function (e) {
@@ -18564,7 +18562,11 @@ var Common = exports.Common = function () {
       paused: true
     });
     this.popUpAnimate.to(".popup", 0.3, {
-      autoAlpha: 1
+      autoAlpha: 1,
+      onReverseComplete: function onReverseComplete() {
+        (0, _jquery2.default)("body").removeClass("hide");
+        (0, _jquery2.default)("html").removeClass("hide");
+      }
     });
 
     this.popUpSucces = new _gsap.TimelineLite({
