@@ -18451,7 +18451,7 @@ var Common = exports.Common = function () {
    * Cache data, make preparations and initialize common scripts.
    */
   function Common() {
-    var _this = this;
+    var _this2 = this;
 
     _classCallCheck(this, Common);
 
@@ -18492,20 +18492,23 @@ var Common = exports.Common = function () {
       var popUpSubmit = (0, _jquery2.default)(".popup__content__form__button");
 
       popUpTrigger.click(function () {
-        _this.popUpAnimate.play();
+        _this2.popUpAnimate.play();
         (0, _jquery2.default)("body").addClass("hide");
         (0, _jquery2.default)("html").addClass("hide");
       });
       popUpClose.click(function () {
-        _this.popUpAnimate.reverse();
-        _this.popUpSucces.reverse();
+        _this2.popUpAnimate.reverse();
+        _this2.popUpSucces.reverse();
         (0, _jquery2.default)("body").removeClass("hide");
         (0, _jquery2.default)("html").removeClass("hide");
       });
 
       popUpSubmit.click(function (e) {
         e.preventDefault();
-        _this.validateForm();
+        var _this = (0, _jquery2.default)(e.currentTarget);
+        var parentForm = (0, _jquery2.default)(_this).parent('.popup__content__form');
+        console.log(parentForm);
+        _this2.validateForm(parentForm);
       });
     };
 
@@ -18516,9 +18519,9 @@ var Common = exports.Common = function () {
       var currentScrollTop = window.pageYOffset;
 
       if (currentScrollTop > 140) {
-        if (!header.hasClass("active")) _this.tl.play();
+        if (!header.hasClass("active")) _this2.tl.play();
       } else {
-        _this.tl.reverse();
+        _this2.tl.reverse();
         (0, _jquery2.default)(".header").removeClass("fix");
       }
       (0, _jquery2.default)(".header__top__contacts__numbers").removeClass("active");
@@ -18528,7 +18531,7 @@ var Common = exports.Common = function () {
     if (_helpers.Resp.isDesk) {
       (0, _jquery2.default)("body").addClass("with-hover");
       (0, _jquery2.default)(".header__top__contacts__button").click(function () {
-        _this.tl.reverse();
+        _this2.tl.reverse();
         (0, _jquery2.default)(".header").addClass("fix");
       });
     }
@@ -18580,16 +18583,16 @@ var Common = exports.Common = function () {
 
   _createClass(Common, [{
     key: 'validateForm',
-    value: function validateForm() {
+    value: function validateForm(container) {
       (0, _jquery2.default)(".popup__content__form__label").removeClass("error");
       (0, _jquery2.default)(".iferror").hide();
       (0, _jquery2.default)(".ifok").hide();
       var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
       var errors = 1;
-      var site = (0, _jquery2.default)("#site-f");
-      var name = (0, _jquery2.default)("#name-f");
-      var email = (0, _jquery2.default)("#mail-f");
-      var phone = (0, _jquery2.default)("#phone-f");
+      var site = (0, _jquery2.default)(container).find(".site-f");
+      var name = (0, _jquery2.default)(container).find(".name-f");
+      var email = (0, _jquery2.default)(container).find(".mail-f");
+      var phone = (0, _jquery2.default)(container).find(".phone-f");
 
       if (site.val().length < 2) {
         errors = 0;
