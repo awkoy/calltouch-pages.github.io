@@ -18850,7 +18850,6 @@ var Common = exports.Common = function () {
       if (!_helpers.Resp.isMobile) {
         (0, _jquery2.default)(document).scroll(this.throttle(this.headerActivate, 100));
       }
-
       if (_helpers.Resp.isMobile) this.mobileActions();
     }
   }]);
