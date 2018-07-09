@@ -28,7 +28,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="102" />
-    <option name="y" value="53" />
+    <option name="y" value="50" />
     <option name="width" value="1400" />
     <option name="height" value="990" />
   </component>
@@ -43,7 +43,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../white-horse" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -85,11 +85,12 @@
       <workItem from="1530376816960" duration="529000" />
       <workItem from="1530652946845" duration="242000" />
       <workItem from="1530653338700" duration="6000" />
+      <workItem from="1530896436981" duration="45000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8825000" />
+    <option name="totallyTimeSpent" value="8870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
